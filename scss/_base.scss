@@ -1,0 +1,97 @@
+// COLOR VARIABLES
+$color-gold: #c69963;
+$color-gold-dark: #B28451;
+
+$color-blue-dark: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-greyishgold-dark-1: #54483A;
+$color-greyishgold-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+//media query
+$largest-bp: 68.75em;
+$large-bp: 56.25em;
+$medium-bp: 46.875em;
+$small-bp: 37.5em;
+
+@mixin breakpoint($px) {
+    @media only screen and (max-width: $px) {
+        @content;
+    }
+}
+
+
+* , *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;   // 10px commonly
+
+    @include breakpoint($largest-bp){
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: 'Nunito';
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-greyishgold-dark-2;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-template-rows: 80vh auto 40vw repeat(3, auto);
+    padding-left: 8rem;
+    grid-template-areas: "header realtors"
+                         "features features"
+                         "story story"
+                         "houses houses"
+                         "gallery gallery"
+                         "footer footer";
+
+    @include breakpoint($large-bp){
+        padding-left: 0;
+        padding-top: 6rem;
+        grid-template-columns: 6fr 3fr;
+        grid-template-rows: 80vh repeat(5, auto);
+        grid-template-areas:"header realtors"
+                            "features features"
+                            "story story"
+                            "houses houses"
+                            "gallery gallery"
+                            "footer footer";
+    }
+
+    @include breakpoint($medium-bp){
+        grid-template-columns: auto;
+        grid-template-rows: 94vh repeat(6, auto);
+        grid-template-areas:"header"
+                            "realtor"
+                            "features"
+                            "story"
+                            "houses"
+                            "gallery"
+                            "footer";
+    }
+}
+
+.mb-sm {
+    margin-bottom: 2rem;
+}
+.mb-md {
+    margin-bottom: 4rem;
+}
+.mb-lg {
+    margin-bottom: 8rem;
+}

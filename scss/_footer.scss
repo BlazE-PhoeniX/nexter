@@ -1,0 +1,57 @@
+.footer {
+    background: $color-blue-dark;
+    grid-area: footer;
+    display: grid;
+    padding: 8rem 6rem;
+    grid-template-columns: 1fr minmax(min-content, 114rem) 1fr;
+
+    @include breakpoint($medium-bp){
+        padding: 4rem 3rem;
+    }
+
+    .nav {
+        list-style-type: none;
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 3rem;
+
+        @include breakpoint($medium-bp){
+            gap: 1rem;
+        }
+        
+
+        &__link {
+            padding: 1.5rem 2rem;
+            font-weight: 300;
+            display: block;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-family: 'Josefin Sans';
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            transition: all .2s;
+
+            &:hover {
+                background-color: rgba(#fff, .1);
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    p {
+        width: 70%;
+        margin: 0 auto;
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 8rem;
+        color: #fff;
+        font-weight: 300;
+        font-size: 1.4rem;
+
+        @include breakpoint($medium-bp){
+            width: 90%;
+        }
+    }
+}

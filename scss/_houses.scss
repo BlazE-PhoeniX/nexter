@@ -1,0 +1,79 @@
+.houses {
+    grid-area: houses;
+    display: grid;
+    grid-template-columns: 1fr minmax(min-content, 114rem) 1fr;
+
+    &__box {
+        margin: 15rem 0;
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 6rem;
+        padding: 0 4rem;
+
+        @include breakpoint($small-bp){
+            margin: 7.5rem 0;
+        }
+    }
+
+    .house {
+        background-color: $color-grey-light-1;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        gap: 3rem;
+        box-shadow: 0 1.5rem 4rem rgba(#000, .15);
+        overflow: hidden;
+
+        &__heart{
+            height: 2.5rem;
+            width: 2.5rem;
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            justify-self: flex-end;
+            margin: 1rem;
+            fill: $color-gold;
+        }
+
+        &__img{
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            width: 100%;
+            display: cover;
+        }
+
+        &__name {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            background: $color-blue-dark;
+            align-self: flex-end;
+            text-align: center;
+            padding: .5rem;
+            width: 90%;
+            margin: 0 auto;
+            transform: translateY(50%);
+        }
+
+        .house__stats {
+            display:grid;
+            grid-template-columns: auto auto;
+            gap: 3rem;
+            padding: 3rem 3rem 0;
+
+            &>* {
+                display: flex;
+                align-items: center;
+            }
+
+            svg {
+                height: 2rem;
+                width: 2rem;
+                fill: $color-gold;
+                margin-right: 1rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

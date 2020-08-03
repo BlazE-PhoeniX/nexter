@@ -1,0 +1,77 @@
+.story {
+    overflow: hidden;
+    grid-area: story;
+    background: $color-grey-light-1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    
+    @include breakpoint($large-bp){
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    &__imgs {
+        padding: 6rem;
+        height: 40vw;
+        background: linear-gradient(rgba($color-gold, .5), rgba($color-gold, .5)), url('../img/back.jpg');
+        background-size: cover;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(6,1fr);
+        align-items: center;
+
+        @include breakpoint($large-bp){
+            height:auto;
+        }
+    }
+
+    &__img {
+        width: 100%;
+
+        &--1 {
+            grid-row: 2 / span 4;
+            grid-column: 2 / span 4;
+            
+            @include breakpoint($large-bp){
+                grid-row: 1 / -1;
+                grid-column: 1 / 5;
+            }
+        }
+        
+        &--2 {
+            align-self: flex-start;
+            grid-row: 4 / span 3;
+            grid-column: 4 / span 3;
+            width: 115%;
+            
+            @include breakpoint($large-bp){
+                align-self: center;
+                width: 100%;
+                grid-row: 2 / span 4;
+                grid-column: 4 / span 3;
+            }
+        }
+    }
+
+    &__content {
+        display: grid;
+        align-content: center;
+        justify-items: start;
+        height: 40vw;
+        padding: 10rem;
+
+        @include breakpoint($large-bp){
+            height:auto;
+        }
+        
+        @include breakpoint($small-bp){
+            padding: 4rem 3rem;
+        }
+
+    }
+    
+    &__text {
+        font-size: 1.5rem;
+        margin: 3rem 0;
+    }
+}

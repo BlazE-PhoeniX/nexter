@@ -1,0 +1,49 @@
+%heading {
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    color: white;
+    font-size: 4.5rem;
+}
+
+.heading-2 {
+    @extend %heading;
+    color: $color-greyishgold-dark-1;
+    font-style: italic;
+    line-height: 1;
+    font-size: 4rem;
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $color-gold;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 1.9rem;
+
+    &--light{ color: white; }
+
+    &--dark { color: $color-greyishgold-dark-1; }
+}
+
+.btn {
+    padding: 1.8rem 3rem;
+    font-size: 1.5rem;
+    background: $color-gold;
+    border-radius: none;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans';
+
+    &:hover {
+        background: $color-gold-dark;
+    }
+}
